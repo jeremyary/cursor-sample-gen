@@ -17,6 +17,7 @@ A modern, containerized Message Control Protocol (MCP) service that provides a R
 - [Development](#development)
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
+- [Disclaimer](#disclaimer)
 - [License](#license)
 
 ## What is MCP?
@@ -296,6 +297,18 @@ Once the service is running, you can access the interactive API documentation at
 - Write tests for new features
 - Update documentation as needed
 - Keep commits atomic and well-described
+
+## Disclaimer
+
+This project was created entirely through a conversation with an AI assistant (Claude 3.7 Sonnet) using Cursor IDE. The AI helped with:
+- Project structure and architecture design
+- Code implementation and best practices
+- Documentation and README creation
+- Testing framework setup
+- Docker configuration
+- Git repository initialization
+
+All code, documentation, and configuration files were generated through this collaborative process, demonstrating the capabilities of AI-assisted development.
 
 ## License
 
