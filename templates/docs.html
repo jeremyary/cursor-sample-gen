@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            --primary: #1e88e5;
+            --primary-hover: #1976d2;
+        }
+        
+        body {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .container {
+                background: #1a1a1a;
+            }
+        }
+
+        pre {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            pre {
+                background: #2d2d2d;
+            }
+        }
+
+        code {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9em;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary);
+            margin-top: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+        }
+
+        .header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .api-endpoint {
+            background: #f8f9fa;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-left: 4px solid var(--primary);
+            border-radius: 4px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .api-endpoint {
+                background: #2d2d2d;
+            }
+        }
+
+        .api-endpoint code {
+            color: var(--primary);
+        }
+
+        .mermaid {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .mermaid {
+                background: #2d2d2d;
+            }
+        }
+
+        /* Mermaid diagram specific styles */
+        .mermaid .label {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9em;
+        }
+
+        .mermaid .node rect {
+            rx: 8px;
+            ry: 8px;
+        }
+
+        .mermaid .edgeLabel {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9em;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .mermaid .edgeLabel {
+                background-color: rgba(45, 45, 45, 0.8);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="header">
+            <h1>{{ title }}</h1>
+        </div>
+        <article>
+            {{ content | safe }}
+        </article>
+    </main>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            },
+            sequence: {
+                useMaxWidth: true,
+                diagramMarginX: 50,
+                diagramMarginY: 10,
+                boxMargin: 10,
+                boxTextMargin: 5,
+                noteMargin: 10,
+                messageMargin: 35,
+                mirrorActors: true
+            }
+        });
+    </script>
+</body>
+</html> 
